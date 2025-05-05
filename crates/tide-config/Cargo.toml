@@ -1,0 +1,16 @@
+[package]
+name = "tide-config"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Configuration management for Tide"
+
+[dependencies]
+# Configuration handling
+config.workspace = true
+serde.workspace = true
+
+# Utilities
+anyhow.workspace = true
+thiserror.workspace = true
