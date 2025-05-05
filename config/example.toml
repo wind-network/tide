@@ -1,0 +1,28 @@
+# Tide Configuration Example
+
+[output]
+format = "parquet"  # Options: "json5", "parquet"
+path = "/data/tide-output"
+
+[output.rotation]
+max_size_mb = 1024
+max_files = 100
+time_interval = "1h"
+
+[output.compression]
+enabled = true
+algorithm = "zstd"
+level = 3
+
+[performance]
+pipeline_stages = 4
+batch_size = 1024
+worker_threads = 8  # Optional, defaults to available cores
+enable_simd = true
+
+[validator]
+# For direct validator integration (preferred)
+socket_path = "/path/to/validator/socket"
+
+# For RPC fallback
+# rpc_endpoint = "http://127.0.0.1:8899"

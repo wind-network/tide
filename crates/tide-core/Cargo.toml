@@ -1,0 +1,32 @@
+[package]
+name = "tide-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Core streaming engine for Tide"
+
+[dependencies]
+# Solana dependencies
+solana-sdk.workspace = true
+solana-transaction-status.workspace = true
+
+# Performance
+memmap2.workspace = true
+crossbeam-channel.workspace = true
+rayon.workspace = true
+simdutf8.workspace = true
+
+# Serialization
+serde.workspace = true
+borsh.workspace = true
+
+# Utilities
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[features]
+simd_avx512 = []
+simd_avx2 = []
+default = ["simd_avx2"]
